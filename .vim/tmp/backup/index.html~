@@ -1,0 +1,113 @@
+<!doctype html>  
+
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <script src="js/libs/modernizr-1.6.min.js"></script>
+
+</head>
+
+<body>
+
+  <div id="header">
+    <div class="container_12">
+      <div class="grid_12">
+        <h1><a href="/">BidZatine</a></h1>
+        <ul> 
+	      <li><a class="current" href='' title="Home is where the heart is.">Home</a></li> 
+	      <li><a href='/showcase/' title="See some of the sites built on WordPress.">About</a></li> 
+	      <li><a href='/extend/' title="Taking WordPress beyond your wildest imagination.">Contact</a>
+	      <li><a href='/extend/' title="Taking WordPress beyond your wildest imagination.">Bios</a> 
+	      <li><a href='/extend/' title="Taking WordPress beyond your wildest imagination.">Testimonials</a> 
+        </ul>
+      </div>
+	  <!-- end .grid_12 -->
+	  <div class="clear"></div>
+    </div>
+  </div>
+
+  <div id="focus">
+    <div class="container_12">
+      <div class="grid_12">
+        <img src="images/placeholder.png"></img><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nisl justo. Maecenas mattis convallis felis, ac ullamcorper sem mollis nec. Donec tellus eros, sodales at tincidunt ornare, cursus eu ipsum. Etiam at tortor quis enim varius convallis.</p>
+
+      </div>
+	  <!-- end .grid_12 -->
+	  <div class="clear"></div>
+    </div>
+  </div>
+
+  <div id="main">
+    <div class="container_12">
+      <div class="grid_12">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a nisl justo. Maecenas mattis convallis felis, ac ullamcorper sem mollis nec. Donec tellus eros, sodales at tincidunt ornare, cursus eu ipsum. Etiam at tortor quis enim varius convallis. In ut velit eu lacus sagittis hendrerit eu non risus. Praesent condimentum imperdiet ante a hendrerit. Sed convallis tempus elit non tincidunt. Nullam ac augue quis felis pulvinar tempus. Duis molestie pretium diam, in varius lorem sagittis vel. Phasellus eu diam ut ligula ornare semper.</p>
+        <p>Ut dictum scelerisque purus, quis aliquam erat fermentum quis. Sed ullamcorper risus non massa facilisis molestie. Duis faucibus, est ut ullamcorper tincidunt, augue ligula pretium turpis, at dictum risus quam id mauris. Nulla rhoncus iaculis est, ut egestas justo euismod at. Sed facilisis ligula vitae lacus aliquam in sodales neque hendrerit. Suspendisse vel tellus mauris. Nulla non est non augue faucibus sagittis. Maecenas feugiat vehicula mi, in malesuada nulla pulvinar et. Fusce porttitor tempus neque ullamcorper tempor. Praesent fermentum, felis ac faucibus dapibus, ipsum ante elementum urna, rhoncus blandit tellus sapien eu turpis.
+        </p>
+        <p>Nam sit amet ipsum velit, nec tempus mauris. Ut accumsan turpis purus. Duis sed augue lacus. Donec id iaculis libero. Mauris tincidunt, justo sit amet fermentum gravida, quam neque egestas quam, ut interdum tellus quam non mi. Suspendisse potenti. Nulla blandit aliquam leo, vel adipiscing felis ultrices sed. Aliquam convallis nisi porta tellus convallis malesuada. Nunc sagittis porta adipiscing. Donec eget nibh mauris. Nulla malesuada eleifend orci, ac pulvinar nulla convallis at. Phasellus pharetra, odio et pulvinar bibendum, libero felis dictum velit, vel malesuada sem augue non diam. In sit amet augue tortor, eu lacinia ante. Fusce vehicula ullamcorper dolor, vel commodo tellus sagittis id. Nullam tristique, nisl dictum pellentesque pretium, velit augue semper est, vel laoreet lacus massa sed leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        </p>
+      </div>
+	  <!-- end .grid_12 -->
+	  <div class="clear"></div>
+    </div>
+  </div>
+
+  <div id="footer">
+    <div class="container_12">
+      <div class="grid_12">
+          <p class="copyright">© Copyright 2010, all rights reserved.</p>
+      </div>
+	  <!-- end .grid_12 -->
+	  <div class="clear"></div>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+  
+  
+  <!-- scripts concatenated and minified via ant build script-->
+  <script src="js/plugins.js"></script>
+  <script src="js/script.js"></script>
+  <!-- end concatenated and minified scripts-->
+  
+  
+  <!--[if lt IE 7 ]>
+    <script src="js/libs/dd_belatedpng.js"></script>
+    <script> DD_belatedPNG.fix('img, .png_bg'); </script>
+  <![endif]-->
+
+  <!-- yui profiler and profileviewer - remove for production -->
+  <script src="js/profiling/yahoo-profiling.min.js"></script>
+  <script src="js/profiling/config.js"></script>
+  <!-- end profiling code -->
+
+
+  <!-- change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+  
+</body>
+</html>

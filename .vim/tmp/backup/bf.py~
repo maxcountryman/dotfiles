@@ -1,0 +1,21 @@
+def string_process(s):
+        
+    cs = map(ord, s)
+    
+    clist = ''.join(['>' + c for c in 
+        ['+' * n for n in 
+            [(i-i%10)/10 for i in cs]]])
+
+    cell_zero = ''.join(['<' * n for n in [len(cs)]]) + '-'
+    
+    dlist = ''.join(['>' + c + '.' for c in 
+        ['+' * n for n in 
+            [c-j for c,j in zip(cs, [(i-i%10) for i in cs])]]])
+
+    counter_table = '++++++++++[{0}{1}]{2}'.format(clist, cell_zero, dlist)
+    
+    return counter_table
+
+if __name__ == '__main__':
+
+    print ''.join(string_process(''))

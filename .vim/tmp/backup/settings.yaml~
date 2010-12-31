@@ -1,0 +1,10 @@
+---
+server: irc.voxinfinitus.net
+port: 6697
+ssl: True
+nick: Kaa
+user: kaa
+realname: Kaa the Python
+channels: ['#playfultest','#voxinfinitus']
+prefix: '@'
+disabled_plugins: []

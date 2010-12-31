@@ -1,0 +1,16 @@
+<html>
+<head>
+  <link rel='stylesheet' href='div.css'>
+</head>
+
+<body>
+
+  <div id='wrapper'>
+    <p>wrapper</p>
+    <div class='left'><p>Div Left</p></div>
+    <div class='right'><p>Div Right</p></div>
+  </div>
+
+</body>
+
+</html>
