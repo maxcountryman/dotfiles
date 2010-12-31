@@ -1,5 +1,6 @@
 *
+.vim/tmp/*
+!.config
 !.vim
 !.vimrc
-!.config
 !.gitignore
