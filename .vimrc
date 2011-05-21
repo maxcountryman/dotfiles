@@ -39,6 +39,9 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 
+" Color Stuff
+set t_Co=256
+
 " Leader
 let mapleader = ","
 
@@ -63,7 +66,7 @@ vmap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
+set colorcolumn=79
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set list
@@ -170,6 +173,7 @@ nmap <leader>fp :cp<cr>
 au BufNewFile,BufRead *.less set foldmethod=marker
 au BufNewFile,BufRead *.less set foldmarker={,}
 au BufNewFile,BufRead *.less set nocursorline
+au BufNewFile,BufRead *.less set filetype=less
 au BufNewFile,BufRead *.js set foldmethod=marker
 au BufNewFile,BufRead *.js set foldmarker={,}
 
@@ -219,7 +223,7 @@ let g:microdata_attributes_complete = 0
 let g:atia_attributes_complete = 0
 
 " Save when losing focus
-au FocusLost * :wa
+au FocusLost * :wa!
 
 " Stop it, hash key
 inoremap # X<BS>#
@@ -335,6 +339,7 @@ if has('gui_running')
     set guifont=Inconsolata:h18
     colorscheme railscasts
     set background=dark
+    set transparency=15
 
     set go-=T
     set go-=l
