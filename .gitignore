@@ -1,6 +1,1 @@
-*
-.vim/tmp/*
-!.config
-!.vim
-!.vimrc
-!.gitignore
+/Users/max/Dotfiles/.gitignore
