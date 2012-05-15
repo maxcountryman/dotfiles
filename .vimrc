@@ -13,43 +13,60 @@ Bundle 'ack.vim'
 Bundle 'bufkill.vim'
 Bundle 'ctrlp.vim'
 Bundle 'pyflakes.vim'
+Bundle 'vim-peepopen'
 Bundle 'bufexplorer.zip'
 
+filetype indent on
 filetype plugin indent on
 
+colorscheme railscasts
+syntax on
+
+" general settings
+set autoread
+set autowrite
+set backspace=indent,eol,start
+set colorcolumn=79
+set cursorline
 set encoding=utf-8
+set formatoptions+=qrn1
+set hidden
+set history=1000
+set laststatus=2
+set linebreak
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set modelines=0
+set relativenumber
+set ruler
 set scrolloff=3
-set autoindent
+set shiftround
+set showbreak=↪
 set showmode
 set showcmd
-set hidden
+set textwidth=79
+set title
+set ttyfast
+set undofile
+set visualbell
 set wildmenu
 set wildmode=list:longest
-set visualbell
-set cursorline
-set ttyfast
-set ruler
-set backspace=indent,eol,start
-set laststatus=2
-set relativenumber
-set undofile
-
-set modelines=0
+set wrap
 
 " tabs
-set tabstop=4
+set expandtab
 set shiftwidth=4
 set softtabstop=4
-set expandtab
+set tabstop=4
 
 " status line
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 set laststatus=2
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 
 " backup and swap
+set backup
 set backupdir=~/.vim/tmp/backup//
 set directory=~/.vim/tmp/swap//
-set backup
 
 " color
 set t_Co=256
@@ -73,22 +90,14 @@ vmap <tab> %
 " sane line navigation ;)
 inoremap <C-a> <esc>I
 inoremap <C-e> <End>
-
-" wrapping
-set wrap
-set textwidth=79
-
-" use the same symbols as TextMate for tabstops and EOLs
-set list
-set listchars=tab:▸\ ,eol:¬
+noremap H ^
+noremap L $
 
 " encourage hjkl
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
 
 " buffer navigation
 map <C-h> <C-w>h
@@ -98,26 +107,24 @@ map <C-l> <C-w>l
 map <leader>w <C-w>v<C-w>l
 
 " ack
-map <leader>a :Ack 
+nnoremap <leader>a :Ack!<space>
 
 " ctrlp
 let g:ctrlp_map = '<c-p>'
+nmap <leader>p :CtrlP getcwd()<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 
 " vimclojure
-let vimclojure#NailgunClient = '/usr/local/bin/ng-server'
+let vimclojure#NailgunClient = '/usr/local/bin/ng'
 let vimclojure#ParenRainbow = 1
 let vimclojure#HighlightBuiltins = 1
 let vimclojure#HighlightContrib = 1
 
 " autosave on lost focus
-au FocusLost * :wa!
+au FocusLost * :silent! wall
 
-" hilight for `bad spelling`
-hi SpellBad term=underline gui=undercurl guisp=Orange
-
-syntax on
-colorscheme railscasts
-set colorcolumn=79
+" resize splits dynamically
+au VimResized * :wincmd =
 
 " GUI-specific
 if has('gui_running')
@@ -130,6 +137,9 @@ if has('gui_running')
     set go-=L
     set go-=r
     set go-=R
+
+    " hilight for `bad spelling`
+    hi SpellBad term=underline gui=undercurl guisp=Orange
 
     " railcasts theme hacks
     hi ColorColumn guibg=#333435
