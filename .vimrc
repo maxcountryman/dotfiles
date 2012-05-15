@@ -8,9 +8,12 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'railscasts'
-Bundle 'pyflakes.vim'
+Bundle 'VimClojure'
+Bundle 'ack.vim'
+Bundle 'bufkill.vim'
 Bundle 'ctrlp.vim'
-Bundle 'molokai'
+Bundle 'pyflakes.vim'
+Bundle 'bufexplorer.zip'
 
 filetype plugin indent on
 
@@ -75,15 +78,11 @@ inoremap <C-e> <End>
 set wrap
 set textwidth=79
 
-" Use the same symbols as TextMate for tabstops and EOLs
+" use the same symbols as TextMate for tabstops and EOLs
 set list
 set listchars=tab:▸\ ,eol:¬
 
-" Color scheme (terminal)
-syntax on
-colorscheme railscasts
-set colorcolumn=79
-
+" encourage hjkl
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -91,38 +90,34 @@ nnoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
 
-" Buffer navigation
+" buffer navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 map <leader>w <C-w>v<C-w>l
 
-nnoremap K <nop>
-
-" Sort CSS
-map <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
-
-" Ack
+" ack
 map <leader>a :Ack 
 
-" Yankring
-nnoremap <silent> <leader>y :YRShow<cr>
+" ctrlp
+let g:ctrlp_map = '<c-p>'
 
-" Formatting, TextMate-style
-map <leader>q gqip
+" vimclojure
+let vimclojure#NailgunClient = '/usr/local/bin/ng-server'
+let vimclojure#ParenRainbow = 1
+let vimclojure#HighlightBuiltins = 1
+let vimclojure#HighlightContrib = 1
 
-nmap <leader>m :make<cr>
-
-" HTML tag closing
-inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
-
-" Make selecting inside an HTML tag less dumb
-nnoremap Vit vitVkoj
-nnoremap Vat vatV
-
-" Save when losing focus
+" autosave on lost focus
 au FocusLost * :wa!
+
+" hilight for `bad spelling`
+hi SpellBad term=underline gui=undercurl guisp=Orange
+
+syntax on
+colorscheme railscasts
+set colorcolumn=79
 
 " GUI-specific
 if has('gui_running')
@@ -135,8 +130,6 @@ if has('gui_running')
     set go-=L
     set go-=r
     set go-=R
-
-    hi SpellBad term=underline gui=undercurl guisp=Orange
 
     " railcasts theme hacks
     hi ColorColumn guibg=#333435
