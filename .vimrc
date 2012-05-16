@@ -7,13 +7,15 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'daveray/vimclojure-easy', {'rtp': 'bundle/vimclojure-2.3.1'}
+Bundle 'shemerey/vim-peepopen'
+
 Bundle 'railscasts'
-Bundle 'VimClojure'
+
 Bundle 'ack.vim'
 Bundle 'bufkill.vim'
 Bundle 'ctrlp.vim'
 Bundle 'pyflakes.vim'
-Bundle 'vim-peepopen'
 Bundle 'bufexplorer.zip'
 
 filetype indent on
@@ -112,13 +114,16 @@ nnoremap <leader>a :Ack!<space>
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 nmap <leader>p :CtrlP getcwd()<CR>
-nmap <leader>b :CtrlPBuffer<CR>
+nmap <leader>b :CtrlP getcwd()<CR><c-b>
 
 " vimclojure
-let vimclojure#NailgunClient = '/usr/local/bin/ng'
+let vimclojure#DynamicHighlighting = 1
+let vimclojure#FuzzyIndent = 1
 let vimclojure#ParenRainbow = 1
 let vimclojure#HighlightBuiltins = 1
 let vimclojure#HighlightContrib = 1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = $HOME . '/.vim/bundle/vimclojure-easy/lib/vimclojure-nailgun-client/ng'
 
 " autosave on lost focus
 au FocusLost * :silent! wall
