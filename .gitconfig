@@ -1,0 +1,8 @@
+[user]
+	name = Max Countryman
+	email = maxc@me.com
+[core]
+	excludesfile = /Users/max/.gitignore_global
+	editor = /usr/local/bin/vim
+[push]
+	default = current
