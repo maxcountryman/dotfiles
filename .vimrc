@@ -12,23 +12,19 @@ if !has('nvim')
 endif
 
 Plug 'Shougo/denite.nvim'
-
-Plug 'arcticicestudio/nord-vim'
-
+Plug 'StanAngeloff/php.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim'
+Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'kshenoy/vim-signature'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'wellle/tmux-complete.vim'
-
+Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'w0rp/ale'
-
-Plug 'StanAngeloff/php.vim'
-
+Plug 'wellle/tmux-complete.vim'
 Plug 'zchee/deoplete-jedi'
 
 call plug#end()
@@ -79,27 +75,25 @@ set backspace=indent,eol,start
 set colorcolumn=79
 set cursorline
 set encoding=utf-8
+set expandtab
+set gdefault
 set history=1000
-set relativenumber
+set hlsearch
+set ignorecase
+set incsearch
 set laststatus=2
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set noshowmode
-set showcmd
-set undofile
-set visualbell
-
-set expandtab
+set relativenumber
 set shiftwidth=4
+set showcmd
+set showmatch
+set smartcase
 set softtabstop=4
 set tabstop=4
-
-set hlsearch
-set ignorecase
-set incsearch
-set gdefault
-set smartcase
-set showmatch
+set undofile
+set visualbell
 
 " Make it so we can use the system clipboard.
 vmap <C-x> :!pbcopy<CR>
