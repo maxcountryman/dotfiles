@@ -17,10 +17,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'hashivim/vim-terraform'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'kshenoy/vim-signature'
+Plug 'rust-lang/rust.vim'
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'w0rp/ale'
@@ -48,7 +51,8 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 "
 let g:ale_linters = {
             \  'php': ['phpcs'],
-            \  'python': ['flake8']
+            \  'python': ['flake8'],
+            \  'rust': ['rls']
             \}
 
 
@@ -57,6 +61,10 @@ let g:ale_linters = {
 let g:lightline = {
             \ 'colorscheme': 'nord',
             \ }
+
+
+" Rust
+let g:rustfmt_autosave = 1
 
 
 " Map a new leader.
