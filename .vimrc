@@ -4,7 +4,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 if !has('nvim')
   Plug 'roxma/nvim-yarp'
