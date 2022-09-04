@@ -8,7 +8,6 @@ M.setup = function()
 
   local format = null_ls.builtins.formatting
 
-  --local augroup = vim.api.nvim_create_augroup('format_on_save', {})
   null_ls.setup {
     sources = {
       format.prettierd,
@@ -33,27 +32,6 @@ M.setup = function()
         end,
       },
     },
-    --on_attach = function(client, bufnr)
-    --  if client.supports_method 'textDocument/formatting' then
-    --    vim.api.nvim_buf_create_user_command(bufnr, 'LspFormatting', function()
-    --      print 'LspFormatting called'
-    --      vim.lsp.buf.formatting_sync()
-    --    end, {})
-
-    --    vim.api.nvim_clear_autocmds {
-    --      group = augroup,
-    --      buffer = bufnr,
-    --      --pattern = '*',
-    --    }
-
-    --    vim.api.nvim_create_autocmd('BufWritePre', {
-    --      group = augroup,
-    --      --pattern = '*',
-    --      buffer = bufnr,
-    --      command = 'LspFormatting',
-    --    })
-    --  end
-    --end,
   }
 end
 

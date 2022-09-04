@@ -8,6 +8,8 @@ return function()
 
   vim.opt.completeopt = 'menu,menuone,noselect'
 
+  local select_opts = { behavior = cmp.SelectBehavior.Select }
+
   cmp.setup {
     snippet = {
       expand = function(args)
@@ -22,7 +24,7 @@ return function()
       fields = { 'menu', 'abbr', 'kind' },
       format = lspkind.cmp_format {
         mode = 'symbol_text', -- show only symbol annotations
-        --preset = "codicons", -- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
+        preset = 'codicons', -- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
         maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
       },
     },
@@ -42,9 +44,19 @@ return function()
       { name = 'emoji' },
     },
     mapping = {
+      ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
+      ['<Down>'] = cmp.mapping.select_next_item(select_opts),
+
+      ['<C-p>'] = cmp.mapping.select_prev_item(select_opts),
+      ['<C-n>'] = cmp.mapping.select_next_item(select_opts),
+
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+      ['<C-Space>'] = cmp.mapping.complete {},
       ['<C-e>'] = cmp.mapping.close(),
       ['<CR>'] = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = true },
-      ['<C-Space>'] = cmp.mapping.complete(),
+
       ['<Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()

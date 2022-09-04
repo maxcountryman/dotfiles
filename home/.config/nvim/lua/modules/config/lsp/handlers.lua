@@ -67,6 +67,7 @@ function M.on_attach(client, _)
     illuminate.on_attach(client)
   end
 
+  -- Ensure only null-ls provides formatting.
   if client.name ~= 'null-ls' then
     client.resolved_capabilities.document_formatting = false
   end
@@ -122,9 +123,9 @@ vim.cmd [[command! LspToggleAutoFormat execute 'lua require("modules.config.lsp.
 vim.cmd [[command! LspToggleVirtualText execute 'lua require("modules.config.lsp.handlers").toggle_virtual_text()']]
 
 -- Show diagnostic when cursor is over the affected range.
-vim.cmd [[
-    set signcolumn=yes
-    autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]]
+--vim.cmd [[
+--    set signcolumn=yes
+--    autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+--]]
 
 return M

@@ -62,4 +62,20 @@ opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
 opt.pumblend = 10 -- Popup menu transparency
 opt.pumheight = 8 -- Popup menu height
 
-opt.shortmess = vim.opt.shortmess + { c = true }
+-- Shortmess
+opt.shortmess = opt.shortmess
+  + {
+    A = true, -- don't give the "ATTENTION" message when an existing swap file is found.
+    I = true, -- don't give the intro message when starting Vim |:intro|.
+    W = true, -- don't give "written" or "[w]" when writing a file
+    c = true, -- don't give |ins-completion-menu| messages
+    m = true, -- use "[+]" instead of "[Modified]"
+  }
+
+-- Format options
+opt.formatoptions = opt.formatoptions
+  + {
+    c = false,
+    o = false, -- O and o, don't continue comments
+    r = true, -- Pressing Enter will continue comments
+  }

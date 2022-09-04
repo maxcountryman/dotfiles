@@ -28,7 +28,6 @@ return function()
       require('rust-tools').setup {
         tools = {
           inlay_hints = { auto = true },
-          autoSetHints = true,
           hover_actions = {
             auto_focus = true,
           },
@@ -56,7 +55,7 @@ return function()
         settings = {
           Lua = {
             diagnostics = {
-              globals = { 'vim' },
+              globals = { 'vim', 'safe_require' },
             },
           },
         },
