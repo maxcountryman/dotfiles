@@ -122,10 +122,4 @@ end
 vim.cmd [[command! LspToggleAutoFormat execute 'lua require("modules.config.lsp.handlers").toggle_format_on_save()']]
 vim.cmd [[command! LspToggleVirtualText execute 'lua require("modules.config.lsp.handlers").toggle_virtual_text()']]
 
--- Show diagnostic when cursor is over the affected range.
---vim.cmd [[
---    set signcolumn=yes
---    autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
---]]
-
 return M
