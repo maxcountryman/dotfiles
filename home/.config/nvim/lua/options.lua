@@ -35,10 +35,12 @@ opt.autoindent = true
 opt.splitright = true -- bool: Place new window to right of current one
 opt.splitbelow = true -- bool: Place new window below the current one
 
--- [[ Backups ]]
-opt.backup = true
-opt.writebackup = true
-opt.swapfile = true
+-- [[ Recovery ]]
+opt.undofile = true
+local cache_prefix = vim.fn.expand '~/.cache/nvim/'
+opt.undodir = cache_prefix .. '.undo/'
+opt.backupdir = cache_prefix .. '.backup/'
+opt.directory = cache_prefix .. '.swp/'
 
 opt.list = true
 opt.listchars:append 'space:⋅'
