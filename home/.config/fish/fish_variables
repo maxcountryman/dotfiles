@@ -1,0 +1,41 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export SENTRY_DSN:https\x3a//ef31ff3f7b3a49c2b8418eb101149ab3\x40o560393\x2eingest\x2esentry\x2eio/5695915
+SETUVAR __fish_initialized:3400
+SETUVAR _fisher_catppuccin_2F_fish_files:\x7e/\x2econfig/fish/conf\x2ed/frappe\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/latte\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/macchiato\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/mocha\x2efish
+SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
+SETUVAR _fisher_plugins:catppuccin/fish\x1ejorgebucaran/fisher
+SETUVAR _fisher_upgraded_to_4_4:\x1d
+SETUVAR fish_color_autosuggestion:6c7086
+SETUVAR fish_color_cancel:f38ba8
+SETUVAR fish_color_command:89b4fa
+SETUVAR fish_color_comment:990000
+SETUVAR fish_color_cwd:f9e2af
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:fab387
+SETUVAR fish_color_error:f38ba8
+SETUVAR fish_color_escape:f2cdcd
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:89b4fa
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_match:\x2d\x2dbackground\x3dbrblue
+SETUVAR fish_color_normal:cdd6f4
+SETUVAR fish_color_operator:f5c2e7
+SETUVAR fish_color_param:f2cdcd
+SETUVAR fish_color_quote:a6e3a1
+SETUVAR fish_color_redirection:f5c2e7
+SETUVAR fish_color_search_match:\x2d\x2dbackground\x3d313244
+SETUVAR fish_color_selection:\x2d\x2dbackground\x3d313244
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:94e2d5
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell\x0aType\x20\x60help\x60\x20for\x20instructions\x20on\x20how\x20to\x20use\x20fish
+SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_pager_color_completion:cdd6f4
+SETUVAR fish_pager_color_description:6c7086
+SETUVAR fish_pager_color_prefix:f5c2e7
+SETUVAR fish_pager_color_progress:6c7086
+SETUVAR fish_pager_color_selected_background:\x2d\x2dreverse
+SETUVAR fish_user_paths:/Users/max/\x2econfig/nvm/15\x2e5\x2e0/bin\x1e/usr/local/opt/sqlite/bin\x1e/Users/max/\x2epoetry/bin\x1e/usr/local/opt/gnu\x2dsed/libexec/gnubin\x1e/Users/max/\x2efzf/bin\x1e/Users/max/\x2efig/bin\x1e/Users/max/\x2elocal/bin
+SETUVAR nvm_data:/Users/max/\x2elocal/share/nvm
+SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
