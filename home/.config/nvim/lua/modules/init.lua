@@ -48,6 +48,14 @@ local plugins = {
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-path',
       'onsails/lspkind-nvim', -- Enables icons on completions
+      { -- Rust crates
+        'saecki/crates.nvim',
+        tag = 'v0.2.1',
+        requires = { 'nvim-lua/plenary.nvim' },
+        config = function()
+          require('crates').setup()
+        end,
+      },
       { -- Snippets
         'L3MON4D3/LuaSnip',
         requires = {

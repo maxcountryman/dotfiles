@@ -39,6 +39,7 @@ return function()
       { name = 'nvim_lsp_signature_help' },
       { name = 'nvim_lua', keyword_length = 2 },
       { name = 'luasnip', keyword_length = 2 },
+      { name = 'crates' },
       { name = 'buffer', keyword_length = 2 },
       { name = 'vnsip', keyword_length = 2 },
       { name = 'emoji' },
