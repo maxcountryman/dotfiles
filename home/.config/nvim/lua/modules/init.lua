@@ -35,9 +35,10 @@ local plugins = {
       'williamboman/mason-lspconfig.nvim',
       'jose-elias-alvarez/null-ls.nvim', -- Formatter
       'ray-x/lsp_signature.nvim',
-      'jose-elias-alvarez/nvim-lsp-ts-utils',
+      --'jose-elias-alvarez/nvim-lsp-ts-utils',
       'RRethy/vim-illuminate',
       'simrat39/rust-tools.nvim',
+      'jose-elias-alvarez/typescript.nvim',
     },
   },
   { -- Autocompletion plugin

@@ -48,6 +48,15 @@ return function()
         },
       }
     end,
+    ['tsserver'] = function()
+      require('typescript').setup {
+        disable_commands = false,
+        server = {
+          capabilities = require('modules.config.lsp.handlers').capabilities,
+          on_attach = require('modules.config.lsp.handlers').on_attach,
+        },
+      }
+    end,
     ['sumneko_lua'] = function()
       require('lspconfig').sumneko_lua.setup {
         capabilities = require('modules.config.lsp.handlers').capabilities,
