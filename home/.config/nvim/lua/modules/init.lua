@@ -15,7 +15,10 @@ local plugins = {
   { -- Finder
     'nvim-telescope/telescope.nvim',
     config = conf 'telescope',
-    requires = { 'nvim-lua/plenary.nvim' },
+    requires = {
+      'nvim-lua/plenary.nvim',
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    },
   },
   { -- Illuminate
     'RRethy/vim-illuminate',
