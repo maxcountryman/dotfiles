@@ -50,7 +50,7 @@ opt.listchars:append 'eol:↴'
 opt.updatetime = 300
 opt.timeoutlen = 500
 
-opt.autochdir = true
+--opt.autochdir = true
 
 opt.mouse = 'a'
 

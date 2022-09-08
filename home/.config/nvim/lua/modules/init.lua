@@ -6,7 +6,6 @@ local plugins = {
   { -- Colorschemes
     'catppuccin/nvim',
     as = 'catppuccin',
-    config = conf 'catppuccin',
   },
   { -- Treesiter
     'nvim-treesitter/nvim-treesitter',

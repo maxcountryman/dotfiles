@@ -14,7 +14,7 @@ return function()
   end
 
   mason_lspconfig.setup {
-    ensure_installed = { 'sumneko_lua', 'tailwindcss', 'tsserver' },
+    ensure_installed = { 'sumneko_lua', 'tailwindcss', 'tsserver', 'rust_analyzer', 'eslint', 'taplo' },
   }
 
   mason_lspconfig.setup_handlers {

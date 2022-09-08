@@ -50,12 +50,12 @@ function M.on_attach(client, _)
   map('gD', 'vim.lsp.buf.declaration()')
   map('gi', 'vim.lsp.buf.implementation()')
   map('gr', 'vim.lsp.buf.references()')
-  map('<space>ca', 'vim.lsp.buf.code_action()')
-  map('<space>gh', 'vim.lsp.buf.signature_help()')
-  map('<space>rn', 'vim.lsp.buf.rename()')
+  map('<leader>ca', 'vim.lsp.buf.code_action()')
+  map('<leader>gh', 'vim.lsp.buf.signature_help()')
+  map('<leader>rn', 'vim.lsp.buf.rename()')
   map('[d', 'vim.diagnostic.goto_prev()')
   map(']d', 'vim.diagnostic.goto_next()')
-  map('<space>df', 'vim.diagnostic.open_float()')
+  map('<leader>df', 'vim.diagnostic.open_float()')
 
   local lsp_signature = safe_require 'lsp_signature'
   if lsp_signature then
@@ -71,14 +71,6 @@ function M.on_attach(client, _)
   if client.name ~= 'null-ls' then
     client.resolved_capabilities.document_formatting = false
   end
-
-  --if client.name == 'tsserver' then
-  --  local ts_utils = safe_require 'nvim-lsp-ts-utils'
-  --  if ts_utils then
-  --    ts_utils.setup {}
-  --    ts_utils.setup_client(client)
-  --  end
-  --end
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

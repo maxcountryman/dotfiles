@@ -33,12 +33,13 @@ map(
 )
 
 -- remap for telescope
-local is_git_dir = os.execute 'git rev-parse --is-inside-work-tree >> /dev/null 2>&1'
-if is_git_dir == 0 then
-  map('n', '<C-f>', '<cmd>lua require("telescope.builtin").git_files()<cr>')
-else
-  map('n', '<C-f>', '<cmd>lua require("telescope.builtin").find_files()<cr>')
-end
+--local is_git_dir = os.execute 'git rev-parse --is-inside-work-tree >> /dev/null 2>&1'
+--if is_git_dir == 0 then
+--  map('n', '<C-f>', '<cmd>lua require("telescope.builtin").git_files()<cr>')
+--else
+map('n', '<C-f>', '<cmd>lua require("telescope.builtin").find_files()<cr>')
+map('n', '<C-g>', '<cmd>lua require("telescope.builtin").live_grep()<cr>')
+--end
 
 map('n', '/', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>')
 map('i', '<C-f>', '<esc><cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>')

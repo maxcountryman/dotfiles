@@ -10,6 +10,7 @@ M.setup = function()
 
   null_ls.setup {
     sources = {
+      format.taplo,
       format.prettierd,
       format.stylua,
       format.rustfmt.with {

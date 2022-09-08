@@ -34,14 +34,14 @@ return function()
     },
     -- Sources order are actually their priority order
     sources = cmp.config.sources {
-      { name = 'path' },
-      { name = 'nvim_lsp', keyword_length = 3 },
+      { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
-      { name = 'nvim_lua', keyword_length = 2 },
-      { name = 'luasnip', keyword_length = 2 },
+      { name = 'nvim_lua' },
+      { name = 'luasnip' },
+      { name = 'vnsip' },
+      { name = 'path' },
       { name = 'crates' },
-      { name = 'buffer', keyword_length = 2 },
-      { name = 'vnsip', keyword_length = 2 },
+      { name = 'buffer' },
       { name = 'emoji' },
     },
     mapping = {
