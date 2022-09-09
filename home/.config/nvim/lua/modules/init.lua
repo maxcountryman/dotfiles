@@ -3,6 +3,10 @@ local function conf(name)
 end
 
 local plugins = {
+  { -- Fancy notifications
+    'rcarriga/nvim-notify',
+    config = conf 'notify',
+  },
   { -- Colorschemes
     'catppuccin/nvim',
     as = 'catppuccin',
@@ -38,6 +42,7 @@ local plugins = {
       'RRethy/vim-illuminate',
       'simrat39/rust-tools.nvim',
       'jose-elias-alvarez/typescript.nvim',
+      'b0o/schemastore.nvim',
     },
   },
   { -- Autocompletion plugin
@@ -96,6 +101,10 @@ local plugins = {
   { -- Autosave
     'Pocco81/auto-save.nvim',
     config = conf 'auto-save',
+  },
+  { -- Colorizer
+    'norcalli/nvim-colorizer.lua',
+    config = conf 'nvim-colorizer',
   },
 }
 

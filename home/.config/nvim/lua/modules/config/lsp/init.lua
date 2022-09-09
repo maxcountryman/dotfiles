@@ -14,7 +14,14 @@ return function()
   end
 
   mason_lspconfig.setup {
-    ensure_installed = { 'sumneko_lua', 'tailwindcss', 'tsserver', 'rust_analyzer', 'eslint', 'taplo' },
+    ensure_installed = {
+      'sumneko_lua',
+      'tailwindcss',
+      'tsserver',
+      'rust_analyzer',
+      'eslint',
+      'taplo',
+    },
   }
 
   mason_lspconfig.setup_handlers {
@@ -66,6 +73,19 @@ return function()
             diagnostics = {
               globals = { 'vim', 'safe_require' },
             },
+          },
+        },
+      }
+    end,
+    ['jsonls'] = function()
+      vim.notify 'jsonls'
+      require('lspconfig').jsonls.setup {
+        capabilities = require('modules.config.lsp.handlers').capabilities,
+        on_attach = require('modules.config.lsp.handlers').on_attach,
+        settings = {
+          json = {
+            schemas = require('schemastore').json.schemas(),
+            validate = { enable = true },
           },
         },
       }

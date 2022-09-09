@@ -40,6 +40,7 @@ function M.catppuccin()
       enabled = true,
       colored_indent_levels = false,
     },
+    notify = true,
   }
 
   vim.cmd 'colorscheme catppuccin'
