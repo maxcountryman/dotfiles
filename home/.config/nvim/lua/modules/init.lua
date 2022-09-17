@@ -38,7 +38,6 @@ local plugins = {
       'williamboman/mason-lspconfig.nvim',
       'jose-elias-alvarez/null-ls.nvim', -- Formatter
       'ray-x/lsp_signature.nvim',
-      --'jose-elias-alvarez/nvim-lsp-ts-utils',
       'RRethy/vim-illuminate',
       'simrat39/rust-tools.nvim',
       'jose-elias-alvarez/typescript.nvim',
@@ -102,9 +101,12 @@ local plugins = {
     'Pocco81/auto-save.nvim',
     config = conf 'auto-save',
   },
-  { -- Colorizer
-    'norcalli/nvim-colorizer.lua',
-    config = conf 'nvim-colorizer',
+  { -- Virtual text for hex color codes
+    'rrethy/vim-hexokinase',
+    run = 'make hexokinase',
+    config = function()
+      vim.g.Hexokinase_highlighters = { 'virtual' }
+    end,
   },
 }
 

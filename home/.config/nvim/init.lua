@@ -23,3 +23,5 @@ vim.cmd(
   'hi DiagnosticUnderlineHint  gui=undercurl guisp='
     .. require('modules.config.colors').get_color('DiagnosticHint', 'fg')
 )
+
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, { pattern = { '*.astro' }, command = 'setfiletype astro' })

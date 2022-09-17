@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 -- [[ Context ]]
---opt.colorcolumn = '99' -- str:  Show col for max line length
 opt.number = true -- bool: Show line numbers
 opt.relativenumber = true -- bool: Show relative line numbers
 opt.scrolloff = 4 -- int:  Min num lines of context
@@ -23,10 +22,10 @@ opt.incsearch = true -- bool: Use incremental search
 opt.hlsearch = false -- bool: Highlight search matches
 
 -- [[ Whitespace ]]
-opt.expandtab = true -- bool: Use spaces instead of tabs
 opt.shiftwidth = 4 -- num:  Size of an indent
 opt.softtabstop = 4 -- num:  Number of spaces tabs count for in insert mode
 opt.tabstop = 4 -- num:  Number of spaces tabs count for
+opt.expandtab = true -- bool: Use spaces instead of tabs
 opt.smarttab = true
 opt.smartindent = true
 opt.autoindent = true
@@ -37,7 +36,7 @@ opt.splitbelow = true -- bool: Place new window below the current one
 
 -- [[ Recovery ]]
 opt.undofile = true
-local cache_prefix = vim.fn.expand '~/.cache/nvim/'
+local cache_prefix = vim.fn.stdpath 'cache'
 opt.undodir = cache_prefix .. '.undo/'
 opt.backupdir = cache_prefix .. '.backup/'
 opt.directory = cache_prefix .. '.swp/'
@@ -46,13 +45,12 @@ opt.list = true
 opt.listchars:append 'space:⋅'
 opt.listchars:append 'eol:↴'
 
--- updatetime: set updatetime for CursorHold
 opt.updatetime = 300
 opt.timeoutlen = 500
-
---opt.autochdir = true
-
 opt.mouse = 'a'
+opt.showmode = false
+opt.clipboard = 'unnamedplus'
+opt.laststatus = 3
 
 --Set completeopt to have a better completion experience
 -- :help completeopt

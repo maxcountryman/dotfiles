@@ -10,6 +10,16 @@ return function()
 
   local select_opts = { behavior = cmp.SelectBehavior.Select }
 
+  local cmp_window = safe_require 'cmp.utils.window'
+  if cmp_window then
+    cmp_window.info_ = cmp_window.info
+    cmp_window.info = function(self)
+      local info = self:info_()
+      info.scrollable = false
+      return info
+    end
+  end
+
   cmp.setup {
     snippet = {
       expand = function(args)
@@ -17,12 +27,17 @@ return function()
       end,
     },
     window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered {
+        winhighlight = 'Normal:CmpPmenu,CursorLine:PmenuSel,Search:None',
+      },
+      documentation = cmp.config.window.bordered {
+        winhighlight = 'Normal:CmpPmenu,CursorLine:PmenuSel,Search:None',
+      },
     },
     formatting = {
       fields = { 'menu', 'abbr', 'kind' },
       format = lspkind.cmp_format {
+        menu = {},
         mode = 'symbol_text', -- show only symbol annotations
         preset = 'codicons', -- https://github.com/microsoft/vscode-codicons/raw/main/dist/codicon.ttf
         maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)

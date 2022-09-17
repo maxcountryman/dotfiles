@@ -15,12 +15,13 @@ return function()
 
   mason_lspconfig.setup {
     ensure_installed = {
+      'astro',
+      'eslint',
+      'rust_analyzer',
       'sumneko_lua',
       'tailwindcss',
-      'tsserver',
-      'rust_analyzer',
-      'eslint',
       'taplo',
+      'tsserver',
     },
   }
 
@@ -31,6 +32,7 @@ return function()
         on_attach = require('modules.config.lsp.handlers').on_attach,
       }
     end,
+
     ['rust_analyzer'] = function()
       require('rust-tools').setup {
         tools = {
@@ -55,6 +57,7 @@ return function()
         },
       }
     end,
+
     ['tsserver'] = function()
       require('typescript').setup {
         disable_commands = false,
@@ -64,6 +67,7 @@ return function()
         },
       }
     end,
+
     ['sumneko_lua'] = function()
       require('lspconfig').sumneko_lua.setup {
         capabilities = require('modules.config.lsp.handlers').capabilities,
@@ -77,8 +81,8 @@ return function()
         },
       }
     end,
+
     ['jsonls'] = function()
-      vim.notify 'jsonls'
       require('lspconfig').jsonls.setup {
         capabilities = require('modules.config.lsp.handlers').capabilities,
         on_attach = require('modules.config.lsp.handlers').on_attach,
