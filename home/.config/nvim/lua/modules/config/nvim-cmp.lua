@@ -53,7 +53,7 @@ return function()
       { name = 'nvim_lsp_signature_help' },
       { name = 'nvim_lua' },
       { name = 'luasnip' },
-      { name = 'vnsip' },
+      { name = 'vsnip' },
       { name = 'path' },
       { name = 'crates' },
       { name = 'buffer' },

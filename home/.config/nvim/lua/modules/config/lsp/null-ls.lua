@@ -6,13 +6,32 @@ M.setup = function()
     return
   end
 
+  local code_actions = null_ls.builtins.code_actions
   local format = null_ls.builtins.formatting
 
   null_ls.setup {
     sources = {
-      format.taplo,
-      format.prettierd,
+      --code_actions.crates,
+      code_actions.gitsigns,
+      format.prettierd.with {
+        filetypes = {
+          'astro',
+          'css',
+          'graphql',
+          'html',
+          'javascript',
+          'javascriptreact',
+          'json',
+          'less',
+          'markdown',
+          'scss',
+          'typescript',
+          'typescriptreact',
+          'yaml',
+        },
+      },
       format.stylua,
+      format.taplo,
       format.rustfmt.with {
         extra_args = function(params)
           local cargo_toml = params.root .. '/' .. 'Cargo.toml'

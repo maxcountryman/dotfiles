@@ -54,15 +54,9 @@ local plugins = {
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-vsnip',
+      'hrsh7th/vim-vsnip',
       'onsails/lspkind-nvim', -- Enables icons on completions
-      { -- Rust crates
-        'saecki/crates.nvim',
-        tag = 'v0.2.1',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = function()
-          require('crates').setup()
-        end,
-      },
       { -- Snippets
         'L3MON4D3/LuaSnip',
         requires = {
@@ -71,6 +65,18 @@ local plugins = {
         },
       },
     },
+  },
+  { -- Rust crates
+    'saecki/crates.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('crates').setup {
+        null_ls = {
+          enabled = true,
+          name = 'crates.nvim',
+        },
+      }
+    end,
   },
   { -- Git related
     'lewis6991/gitsigns.nvim',
