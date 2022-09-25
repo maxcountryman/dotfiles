@@ -29,6 +29,8 @@ opt.expandtab = true -- bool: Use spaces instead of tabs
 opt.smarttab = true
 opt.smartindent = true
 opt.autoindent = true
+opt.breakindent = true
+opt.lbr = true
 
 -- [[ Splits ]]
 opt.splitright = true -- bool: Place new window to right of current one

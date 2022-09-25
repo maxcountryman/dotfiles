@@ -69,14 +69,14 @@ local plugins = {
   { -- Rust crates
     'saecki/crates.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      require('crates').setup {
-        null_ls = {
-          enabled = true,
-          name = 'crates.nvim',
-        },
-      }
-    end,
+    --config = function()
+    --  require('crates').setup {
+    --    null_ls = {
+    --      enabled = true,
+    --      name = 'crates.nvim',
+    --    },
+    --  }
+    --end,
   },
   { -- Git related
     'lewis6991/gitsigns.nvim',
