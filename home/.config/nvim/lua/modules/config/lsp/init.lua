@@ -74,6 +74,7 @@ return function()
         on_attach = require('modules.config.lsp.handlers').on_attach,
         settings = {
           Lua = {
+            format = { enable = false }, -- Ensure we use `null-ls` instead, i.e. Stylua.
             diagnostics = {
               globals = { 'vim', 'safe_require' },
             },
