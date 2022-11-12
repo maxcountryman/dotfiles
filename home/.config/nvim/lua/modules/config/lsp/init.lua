@@ -33,6 +33,20 @@ return function()
       }
     end,
 
+    ['tailwindcss'] = function()
+      require('lspconfig').tailwindcss.setup {
+        capabilities = require('modules.config.lsp.handlers').capabilities,
+        on_attach = function(client, bufnr)
+          require('tailwind-highlight').setup(
+            client,
+            bufnr,
+            { single_column = false, mode = 'background', debounce = 200 }
+          )
+          require('modules.config.lsp.handlers').on_attach(client, bufnr)
+        end,
+      }
+    end,
+
     ['rust_analyzer'] = function()
       require('rust-tools').setup {
         tools = {

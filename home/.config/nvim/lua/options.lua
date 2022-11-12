@@ -60,7 +60,7 @@ opt.laststatus = 3
 -- noselect: Do not select, force to select one from the menu
 -- noinsert: Do not insert text until a selection is made
 opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
-opt.pumblend = 10 -- Popup menu transparency
+--opt.pumblend = 10 -- Popup menu transparency
 opt.pumheight = 8 -- Popup menu height
 
 -- Shortmess
