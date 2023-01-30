@@ -17,11 +17,13 @@ return function()
     ensure_installed = {
       'astro',
       'eslint',
+      'emmet_ls',
       'rust_analyzer',
       'sumneko_lua',
       'tailwindcss',
       'taplo',
       'tsserver',
+      'wgsl_analyzer',
     },
   }
 
@@ -63,9 +65,12 @@ return function()
           on_attach = require('modules.config.lsp.handlers').on_attach,
           settings = {
             ['rust-analyzer'] = {
+              -- HACK: https://github.com/simrat39/rust-tools.nvim/issues/300
+              inlayHints = { locationLinks = false },
               checkOnSave = {
                 command = 'clippy',
               },
+              cargo = { features = 'all' },
             },
           },
         },

@@ -22,6 +22,7 @@ local plugins = {
     requires = {
       'nvim-lua/plenary.nvim',
       { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-telescope/telescope-live-grep-args.nvim' },
     },
   },
   { -- Illuminate
@@ -49,15 +50,15 @@ local plugins = {
     'hrsh7th/nvim-cmp',
     config = conf 'nvim-cmp',
     requires = {
+      'onsails/lspkind-nvim', -- Enables icons on completions
+      'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-emoji',
-      'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-nvim-lua',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-vsnip',
       'hrsh7th/vim-vsnip',
-      'onsails/lspkind-nvim', -- Enables icons on completions
       { -- Snippets
         'L3MON4D3/LuaSnip',
         requires = {
@@ -117,6 +118,18 @@ local plugins = {
   },
   { -- Tailwind color highlights
     'princejoogie/tailwind-highlight.nvim',
+  },
+  { -- vimdiff tool.
+    'sindrets/diffview.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+  },
+  { -- Highlighting for .glsl since there's no treesitter support yet.
+    'tikhomirov/vim-glsl',
+  },
+  {
+    -- A viewer for glsl.
+    'timtro/glslView-nvim',
+    ft = 'glsl',
   },
 }
 

@@ -1,5 +1,12 @@
 local opt = vim.opt
 
+local function list(value, str, sep)
+  sep = sep or ','
+  str = str or ''
+  value = type(value) == 'table' and table.concat(value, sep) or value
+  return str ~= '' and table.concat({ value, str }, sep) or value
+end
+
 -- [[ Context ]]
 opt.number = true -- bool: Show line numbers
 opt.relativenumber = true -- bool: Show relative line numbers
@@ -46,6 +53,15 @@ opt.directory = cache_prefix .. '.swp/'
 opt.list = true
 opt.listchars:append 'space:⋅'
 opt.listchars:append 'eol:↴'
+
+opt.fillchars = list {
+  'vert:│',
+  'diff:╱',
+  'foldclose:',
+  'foldopen:',
+  'fold: ',
+  'msgsep:─',
+}
 
 opt.updatetime = 300
 opt.timeoutlen = 500

@@ -74,11 +74,11 @@ function M.on_attach(client, _)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
 local cmp_nvim_lsp = safe_require 'cmp_nvim_lsp'
 if cmp_nvim_lsp then
   capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 M.capabilities = capabilities
 
 function M.enable_format_on_save()

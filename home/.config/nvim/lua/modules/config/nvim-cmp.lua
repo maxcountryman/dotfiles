@@ -23,6 +23,7 @@ return function()
   cmp.setup {
     snippet = {
       expand = function(args)
+        --vim.fn['vsnip#anonymous'](args.body)
         luasnip.lsp_expand(args.body)
       end,
     },
@@ -48,18 +49,18 @@ return function()
       ghost_text = true,
     },
     -- Sources order are actually their priority order
-    sources = cmp.config.sources {
+    sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'nvim_lsp_signature_help' },
-      { name = "crates" },
       { name = 'nvim_lua' },
       { name = 'luasnip' },
-      { name = 'vsnip' },
-      { name = 'path' },
+      --{ name = 'vsnip' },
       { name = 'crates' },
-      { name = 'buffer' },
+      { name = 'path' },
       { name = 'emoji' },
-    },
+    }, {
+      { name = 'buffer' },
+    }),
     mapping = {
       ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
       ['<Down>'] = cmp.mapping.select_next_item(select_opts),
