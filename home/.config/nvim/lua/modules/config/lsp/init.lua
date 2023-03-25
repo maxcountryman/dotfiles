@@ -13,19 +13,9 @@ return function()
     return
   end
 
-  mason_lspconfig.setup {
-    ensure_installed = {
-      'astro',
-      'eslint',
-      'emmet_ls',
-      'rust_analyzer',
-      'sumneko_lua',
-      'tailwindcss',
-      'taplo',
-      'tsserver',
-      'wgsl_analyzer',
-    },
-  }
+  --mason_lspconfig.setup {
+  --  ensure_installed = {},
+  --}
 
   mason_lspconfig.setup_handlers {
     function(server_name)
@@ -77,18 +67,26 @@ return function()
       }
     end,
 
-    ['tsserver'] = function()
-      require('typescript').setup {
-        disable_commands = false,
-        server = {
-          capabilities = require('modules.config.lsp.handlers').capabilities,
-          on_attach = require('modules.config.lsp.handlers').on_attach,
-        },
+    ['denols'] = function()
+      require('lspconfig').denols.setup {
+        capabilities = require('modules.config.lsp.handlers').capabilities,
+        on_attach = require('modules.config.lsp.handlers').on_attach,
+        root_dir = require('lspconfig').util.root_pattern('deno.json', 'deno.jsonc'),
       }
     end,
 
-    ['sumneko_lua'] = function()
-      require('lspconfig').sumneko_lua.setup {
+    ['tsserver'] = function()
+      require('lspconfig').tsserver.setup {
+        --disable_commands = false,
+        capabilities = require('modules.config.lsp.handlers').capabilities,
+        on_attach = require('modules.config.lsp.handlers').on_attach,
+        root_dir = require('lspconfig').util.root_pattern 'package.json',
+        single_file_support = false,
+      }
+    end,
+
+    ['lua_ls'] = function()
+      require('lspconfig').lua_ls.setup {
         capabilities = require('modules.config.lsp.handlers').capabilities,
         on_attach = require('modules.config.lsp.handlers').on_attach,
         settings = {

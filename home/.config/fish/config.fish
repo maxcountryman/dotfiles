@@ -1,7 +1,13 @@
 source $HOME/.cargo/env
 
+set -g fish_user_paths "/opt/homebrew/bin" $fish_user_paths
+
 set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
+
+# Deno.
+set -g DENO_INSTALL "/Users/max/.deno"
+set -g fish_user_paths "$DENO_INSTALL/bin:$PATH" $fish_user_paths
 
 starship init fish | source
 

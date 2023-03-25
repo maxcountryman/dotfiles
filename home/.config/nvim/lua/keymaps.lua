@@ -40,6 +40,7 @@ map('', 'f', '<cmd>HopWord<cr>', {})
 --else
 map('n', '<C-f>', '<cmd>lua require("telescope.builtin").find_files()<cr>')
 map('n', '<C-g>', '<cmd>lua require("telescope.builtin").live_grep()<cr>')
+map('n', '<leader>fg', "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
 --end
 
 map('n', '/', '<cmd>lua require("telescope.builtin").current_buffer_fuzzy_find()<cr>')

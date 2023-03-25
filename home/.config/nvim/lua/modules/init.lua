@@ -42,7 +42,7 @@ local plugins = {
       'ray-x/lsp_signature.nvim',
       'RRethy/vim-illuminate',
       'simrat39/rust-tools.nvim',
-      'jose-elias-alvarez/typescript.nvim',
+      --'jose-elias-alvarez/typescript.nvim',
       'b0o/schemastore.nvim',
     },
   },
@@ -109,27 +109,12 @@ local plugins = {
     'Pocco81/auto-save.nvim',
     config = conf 'auto-save',
   },
-  { -- Virtual text for hex color codes
-    'rrethy/vim-hexokinase',
-    run = 'make hexokinase',
-    config = function()
-      vim.g.Hexokinase_highlighters = { 'virtual' }
-    end,
-  },
   { -- Tailwind color highlights
     'princejoogie/tailwind-highlight.nvim',
   },
   { -- vimdiff tool.
     'sindrets/diffview.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-  },
-  { -- Highlighting for .glsl since there's no treesitter support yet.
-    'tikhomirov/vim-glsl',
-  },
-  {
-    -- A viewer for glsl.
-    'timtro/glslView-nvim',
-    ft = 'glsl',
   },
 }
 
